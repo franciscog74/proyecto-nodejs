@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = (req, res, next) => {
-    return res.status(200).json({ code: 200, message: "Bienvenido" });
+    return res.sendFile("UI/inicio.html", { root: path.resolve(__dirname, "../") });
 };

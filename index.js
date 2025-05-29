@@ -17,11 +17,15 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", index);
+app.use(express.static("UI/js"));
+app.use(express.static("UI/css"));
 
 app.use("/login", login);
 
-app.use(auth);
+app.post("*splat", auth);
+
+app.get("/", index);
+app.post("/", (req, res, next) => {});
 
 // app.use("/inicio", inicio);
 

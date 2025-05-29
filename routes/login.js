@@ -12,7 +12,6 @@ login.post("/", async (req, res, next) => {
     if (username && password) {
         const sql = `SELECT * FROM usuarios WHERE username = '${username}'
         AND password = '${password}';`;
-        console.log(sql);
         const rows = await db.query(sql);
 
         if (rows.length == 1) {
@@ -24,6 +23,10 @@ login.post("/", async (req, res, next) => {
         return res.status(200).json({ code: 401, message: "Usuario y/o contraseña incorrectos" });
     }
     return res.status(200).json({ code: 500, message: "Campos incompletos" });
+});
+
+login.get("/", (req, res, next) => {
+    return res.sendFile("UI/login.html", { root: path.resolve(__dirname, "../") });
 });
 
 module.exports = login;
