@@ -4,9 +4,9 @@ const app = express();
 
 // Archivos locales
 const cors = require("./middleware/cors");
-const index = require("./middleware/index");
 const auth = require("./middleware/auth");
 const notFound = require("./middleware/notFound");
+const index = require("./routes/index");
 const login = require("./routes/login");
 
 // CORS
@@ -17,15 +17,14 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static("UI/js"));
-app.use(express.static("UI/css"));
+app.use("/js", express.static("UI/js"));
+app.use("/css", express.static("UI/css"));
 
 app.use("/login", login);
 
 app.post("*splat", auth);
 
-app.get("/", index);
-app.post("/", (req, res, next) => {});
+app.use("/", index);
 
 // app.use("/inicio", inicio);
 
