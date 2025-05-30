@@ -18,7 +18,7 @@ function init() {
 }
 
 function checkToken() {
-    axios.post(url, headers)
+    axios.post(url, {}, headers)
     .then(function(res) {
         console.log(res);
         listenBotones();

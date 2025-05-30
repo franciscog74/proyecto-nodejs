@@ -7,7 +7,7 @@ const db = require("../config/database");
 const insertar = express.Router();
 
 insertar.post("/", async (req, res, next) => {
-    const { nombre, apellido_pat, apellido_mat, telefono, email, direccion } = req.body.data;
+    const { nombre, apellido_pat, apellido_mat, telefono, email, direccion } = req.body;
 
     if (nombre && apellido_pat && apellido_mat && telefono && email && direccion) {
         const sql = `INSERT INTO empleados (nombre, apellido_pat, apellido_mat, telefono,

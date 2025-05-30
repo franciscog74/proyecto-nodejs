@@ -24,16 +24,15 @@ function insert(event) {
     var direccion = document.getElementById("input-dir").value;
 
     axios.post(url + "insertar/", {
+        nombre: nombre,
+        apellido_pat: apellido_pat,
+        apellido_mat: apellido_mat,
+        telefono: telefono,
+        email: email,
+        direccion: direccion
+    }, {
         headers: {
             Authorization: "bearer " + localStorage.getItem("token")
-        },
-        data: {
-            nombre: nombre,
-            apellido_pat: apellido_pat,
-            apellido_mat: apellido_mat,
-            telefono: telefono,
-            email: email,
-            direccion: direccion
         }
     }).then(res => {
         console.log(res);
