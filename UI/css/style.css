@@ -1,16 +1,22 @@
-body {
-    margin: 0;
-    height: 100vh;
-    font-family: Arial, sans-serif;
+html {
+    min-height: 100%;
     display: flex;
     justify-content: center;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
     align-items: center;
     background: #d7e8ff;
 }
 
 .container {
+    display: block;
     background: white;
     padding: 2em;
+    margin: 40px 0;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 320px;
@@ -23,6 +29,14 @@ body {
     margin-bottom: 20px;
 }
 
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #555;
+}
+
 .input {
     width: 100%;
     padding: 10px;
@@ -33,7 +47,7 @@ body {
     box-sizing: border-box;
 }
 
-button {
+.enter, .exit {
     width: 100%;
     margin-top: 20px;
     padding: 10px;
@@ -46,15 +60,15 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+.enter:hover, .exit:hover {
     background-color: #4483da;
 }
 
-#btn-exit {
+.exit {
     margin-top: 50px;
     background-color: #e46c6c;
 }
 
-#btn-exit:hover {
+.exit:hover {
     background-color: #e15353;
 }

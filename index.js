@@ -8,6 +8,7 @@ const auth = require("./middleware/auth");
 const notFound = require("./middleware/notFound");
 const index = require("./routes/index");
 const login = require("./routes/login");
+const insertar = require("./routes/insertar");
 
 // CORS
 app.use(cors);
@@ -26,7 +27,7 @@ app.post("*splat", auth);
 
 app.use("/", index);
 
-// app.use("/inicio", inicio);
+app.use("/insertar", insertar);
 
 app.use(notFound);
 

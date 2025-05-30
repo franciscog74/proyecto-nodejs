@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/insertar.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Insertar empleado</h2>
+        <form id="campos">
+            <label for="input-nombre">Nombre</label>
+            <input type="text" class="input" id="input-nombre" placeholder="Nombre" required>
+            <label for="input-ap-pat">Apellido paterno</label>
+            <input type="text" class="input" id="input-ap-pat" placeholder="Apellido paterno" required>
+            <label for="input-ap-mat">Apellido materno</label>
+            <input type="text" class="input" id="input-ap-mat" placeholder="Apellido materno" required>
+            <label for="input-tel">Teléfono</label>
+            <input type="tel" class="input" id="input-tel" placeholder="1234567890" minlength="10"
+                maxlength="13" pattern="(\+\d{1,2})?\d{10}" required>
+            <label for="input-email">Email</label>
+            <input type="email" class="input" id="input-email" placeholder="ejemplo@mail.com" required>
+            <label for="input-dir">Dirección</label>
+            <input type="text" class="input" id="input-dir" placeholder="Principal 123" required>
+            <input type="submit" class="enter" value="Insertar">
+            <button class="enter" id="btn-back">Regresar</button>
+        </form>
+    </div>
+</body>
+</html>

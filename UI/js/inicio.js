@@ -7,7 +7,7 @@ function init() {
         token = localStorage.getItem("token");
         headers = {
             headers: {
-                Authorization: "bearer " + localStorage.getItem("token")
+                Authorization: "bearer " + token
             }
         };
         checkToken();
