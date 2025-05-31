@@ -6,23 +6,12 @@ var container = {};
 function init() {
     if (localStorage.getItem("token")) {
         container = document.querySelector(".container");
-        content();
+        document.getElementById("btn-buscar").addEventListener("click", consultar);
+        document.getElementById("btn-back").addEventListener("click", back);
     }
     else {
         back();
     }
-}
-
-function content() {
-    container.innerHTML = `
-        <h2>Consultar empleados</h2>
-        <label for="input-busq">Nombre(s)</label>
-        <input type="text" class="input" id="input-buscar" placeholder="Nombre(s)">
-        <button class="enter" id="btn-buscar">Buscar</button>
-        <button class="enter" id="btn-back">Regresar</button>
-    `;
-    document.getElementById("btn-buscar").addEventListener("click", consultar);
-    document.getElementById("btn-back").addEventListener("click", back);
 }
 
 function consultar() {
