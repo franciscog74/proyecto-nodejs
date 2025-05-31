@@ -35,7 +35,7 @@ function insert(event) {
         }
     }).then(res => {
         console.log(res);
-        alert(res.data.message)
+        alert(res.data.message);
         if (res.data.code === 201) {
             document.getElementById("campos").reset();
         }

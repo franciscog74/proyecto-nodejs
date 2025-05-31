@@ -41,6 +41,10 @@ label {
     color: #555;
 }
 
+p {
+    text-align: center;
+}
+
 table {
     border-collapse: collapse;
 }

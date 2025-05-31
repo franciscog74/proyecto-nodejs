@@ -17,7 +17,7 @@ insertar.post("/", async (req, res, next) => {
         if (rows.affectedRows == 1) {
             return res.status(201).json({ code: 201, message: "Registro insertado correctamente" });
         }
-        return res.status(200).json({ code: 401, message: "Verifica el formato de los datos" });
+        return res.status(200).json({ code: 500, message: "Verifica el formato de los datos" });
     }
     return res.status(200).json({ code: 500, message: "Campos incompletos" });
 });

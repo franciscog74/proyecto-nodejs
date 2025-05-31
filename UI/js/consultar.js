@@ -23,11 +23,11 @@ function consultar() {
         }
     }).then(res => {
         console.log(res);
-        if (res.data.code === 200) {
+        if (res.data.code !== 500) {
             document.getElementById("btn-back").removeEventListener("click", back);
             container.innerHTML = `
         <h2>Resultados de la búsqueda</h2>
-        ${tabla(res.data.message)}
+        ${(res.data.code === 200) ? tabla(res.data.message) : "<p>No se encontraron coincidencias</p>"}
         <button class="enter" id="btn-back">Regresar</button>
             `;
             document.getElementById("btn-back").addEventListener("click", location.reload.bind(window.location));

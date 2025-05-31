@@ -7,7 +7,7 @@ const auth = require("../middleware/auth");
 const consultar = express.Router();
 
 consultar.get("/", (req, res, next) => {
-    if (!req.query.busqueda) {
+    if (!Object.keys(req.query).length) {
         return res.sendFile("UI/consultar.html", { root: path.resolve(__dirname, "../") });
     }
     else {
@@ -29,7 +29,7 @@ consultar.get("/", async (req, res, next) => {
         if (rows.length > 0) {
             return res.status(200).json({ code: 200, message: rows });
         }
-        return res.status(200).json({ code: 401, message: "No hay coincidencias" });
+        return res.status(200).json({ code: 404, message: "No hay coincidencias" });
     }
     return res.status(200).json({ code: 500, message: "Campos incompletos" });
 });
