@@ -22,6 +22,10 @@ body {
     width: 320px;
 }
 
+.container:has(table) {
+    width: fit-content;
+}
+
 .container h2 {
     text-align: center;
     color: #14407d;
@@ -35,6 +39,24 @@ label {
     margin-top: 10px;
     margin-bottom: 0;
     color: #555;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table td, table th {
+    border: 2px solid white;
+    padding: 5px 10px;
+}
+
+table th {
+    background-color: #539bff;
+}
+
+table td {
+    text-align: left;
+    background-color: #cbe1ff;
 }
 
 .input {

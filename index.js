@@ -9,6 +9,7 @@ const notFound = require("./middleware/notFound");
 const index = require("./routes/index");
 const login = require("./routes/login");
 const insertar = require("./routes/insertar");
+const consultar = require("./routes/consultar");
 
 // CORS
 app.use(cors);
@@ -28,6 +29,8 @@ app.post("*splat", auth);
 app.use("/", index);
 
 app.use("/insertar", insertar);
+
+app.use("/consultar", consultar);
 
 app.use(notFound);
 

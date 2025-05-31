@@ -1,12 +1,11 @@
 window.onload = init;
 
-const url = "http://localhost:3000/"
+const url = "http://localhost:3000/";
 
 function init() {
     if (localStorage.getItem("token")) {
-        token = localStorage.getItem("token");
         document.getElementById("campos").addEventListener("submit", insert);
-        document.getElementById("btn-back").addEventListener("click",back);
+        document.getElementById("btn-back").addEventListener("click", back);
     }
     else {
         back();
