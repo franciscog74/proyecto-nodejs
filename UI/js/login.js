@@ -8,7 +8,7 @@ function init() {
         document.getElementById("btn-login").addEventListener("click", login);
     }
     else {
-        window.location.href = url;
+        location.href = url;
     }
 }
 
@@ -23,7 +23,7 @@ function login() {
         console.log(res);
         if (res.data.code === 200) {
             localStorage.setItem("token", res.data.message);
-            window.location.href = url;
+            location.href = url;
         }
         else {
             alert("Usuario y/o contraseña incorrectos");

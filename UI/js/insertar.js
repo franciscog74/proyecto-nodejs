@@ -45,5 +45,5 @@ function insert(event) {
 }
 
 function back() {
-    window.location.href = url;
+    location.href = url;
 }

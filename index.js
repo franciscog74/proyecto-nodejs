@@ -10,6 +10,7 @@ const index = require("./routes/index");
 const login = require("./routes/login");
 const insertar = require("./routes/insertar");
 const consultar = require("./routes/consultar");
+const modificar = require("./routes/modificar");
 
 // CORS
 app.use(cors);
@@ -31,6 +32,8 @@ app.use("/", index);
 app.use("/insertar", insertar);
 
 app.use("/consultar", consultar);
+
+app.use("/modificar", modificar);
 
 app.use(notFound);
 

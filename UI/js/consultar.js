@@ -70,5 +70,5 @@ function tabla(query) {
 }
 
 function back() {
-    window.location.href = url;
+    location.href = url;
 }

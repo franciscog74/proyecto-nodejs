@@ -13,7 +13,7 @@ function init() {
         checkToken();
     }
     else {
-        window.location.href = url + "login/";
+        location.href = url + "login/";
     }
 }
 
@@ -36,22 +36,22 @@ function listenBotones() {
 }
 
 function ins() {
-    window.location.href = url + "insertar/";
+    location.href = url + "insertar/";
 }
 
 function sel() {
-    window.location.href = url + "consultar/";
+    location.href = url + "consultar/";
 }
 
 function upd() {
-    window.location.href = url + "modificar/";
+    location.href = url + "modificar/";
 }
 
 function del() {
-    window.location.href = url + "borrar/";
+    location.href = url + "borrar/";
 }
 
 function exit() {
     localStorage.clear();
-    window.location.href = url + "login/";
+    location.href = url + "login/";
 }
