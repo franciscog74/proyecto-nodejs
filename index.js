@@ -6,11 +6,13 @@ const app = express();
 const cors = require("./middleware/cors");
 const auth = require("./middleware/auth");
 const notFound = require("./middleware/notFound");
+
 const index = require("./routes/index");
 const login = require("./routes/login");
 const insertar = require("./routes/insertar");
 const consultar = require("./routes/consultar");
 const modificar = require("./routes/modificar");
+const borrar = require("./routes/borrar");
 
 // CORS
 app.use(cors);
@@ -34,6 +36,8 @@ app.use("/insertar", insertar);
 app.use("/consultar", consultar);
 
 app.use("/modificar", modificar);
+
+app.use("/borrar", borrar)
 
 app.use(notFound);
 

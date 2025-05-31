@@ -86,7 +86,7 @@ table td {
     transition: background-color 0.3s;
 }
 
-.enter:hover, .exit:hover {
+.enter:hover {
     background-color: #4483da;
 }
 
@@ -97,4 +97,8 @@ table td {
 
 .exit:hover {
     background-color: #e15353;
+}
+
+#btn-borrar {
+    margin-top: 20px;
 }
