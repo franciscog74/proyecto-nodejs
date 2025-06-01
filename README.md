@@ -35,7 +35,7 @@ Utiliza [Node.js](https://nodejs.org/) como entorno y [Express](https://expressj
 - `helpers` - Contiene una función que sustituye `'` por `\'` en las variables utilizadas en sentencias SQL.
 - `middleware` - Archivo que habilita el CORS, autenticación y mensaje para direcciones inexistentes.
 - `routes` - Manejadores de rutas de las URLs disponibles.
-- `UI` - Interfaz de usuario (véase [Interfaz de usuario](#interfaz-de-usuario)) y archivos `.js` y `.css` [^1].
+- `UI` - Interfaz de usuario (véase [Interfaz de usuario](#interfaz-de-usuario)), y archivos `.js` y `.css` [^1].
 
 ### Base de datos
 
