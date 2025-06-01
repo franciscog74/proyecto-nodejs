@@ -9,6 +9,7 @@ function init() {
         container = document.querySelector(".container");
         document.getElementById("btn-borrar").addEventListener("click", consultar);
         document.getElementById("btn-back").addEventListener("click", back);
+        addEnterBtn();
     }
     else {
         back();

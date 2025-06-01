@@ -28,13 +28,17 @@ function removeEnterBtn() {
 
 function enterBtn(event) {
     if (event.key === "Enter") {
+        event.preventDefault();
         var sibling = this.nextSibling;
         if (sibling.constructor.name === "Text")
             sibling = sibling.nextSibling;
         
         const siblingClasses = sibling.classList;
         if (siblingClasses.contains("enter") || siblingClasses.contains("exit")) {
-            sibling.click();
+            const form = document.forms[0];
+            (form) 
+                ? form.requestSubmit()
+                : sibling.click();
         }
         else {
             sibling.focus();
