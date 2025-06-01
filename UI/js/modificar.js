@@ -9,6 +9,7 @@ function init() {
         container = document.querySelector(".container");
         document.getElementById("btn-buscar").addEventListener("click", consultar);
         document.getElementById("btn-back").addEventListener("click", back);
+        addEnterBtn();
     }
     else {
         back();
@@ -22,6 +23,8 @@ function consultar() {
             const row = res.data.message[0];
             id = row.id;
             document.getElementById("btn-back").removeEventListener("click", back);
+            removeEnterBtn();
+            addEnterBtn();
             container.innerHTML = `
         <h2>Modificar empleado</h2>
         <form id="campos">

@@ -44,10 +44,9 @@ function del(id) {
         }
     }).then(res => {
         console.log(res);
+        alert(res.data.message);
         if (res.data.code === 200) {
             location.reload();
-        } else {
-            alert(res.data.message);
         }
     }).catch(err => {
         console.log(err);

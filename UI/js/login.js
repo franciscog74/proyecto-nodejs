@@ -6,6 +6,7 @@ function init() {
     // localStorage.clear();
     if (!localStorage.getItem("token")) {
         document.getElementById("btn-login").addEventListener("click", login);
+        addEnterBtn();
     }
     else {
         location.href = url;

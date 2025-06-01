@@ -6,6 +6,7 @@ function init() {
     if (localStorage.getItem("token")) {
         document.getElementById("campos").addEventListener("submit", insert);
         document.getElementById("btn-back").addEventListener("click", back);
+        addEnterBtn();
     }
     else {
         back();
