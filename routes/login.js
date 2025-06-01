@@ -3,11 +3,12 @@ const jwt = require("jsonwebtoken");
 const path = require("path");
 
 const db = require("../config/database");
+const sqlFormat = require("../helpers/sqlFormat");
 
 const login = express.Router();
 
 login.post("/", async (req, res, next) => {
-    const { username, password } = req.body;
+    const { username, password } = sqlFormat(req.body);
 
     if (username && password) {
         const sql = `SELECT * FROM usuarios WHERE username = '${username}'

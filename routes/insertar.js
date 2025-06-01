@@ -2,11 +2,12 @@ const express = require("express");
 const path = require("path");
 
 const db = require("../config/database");
+const sqlFormat = require("../helpers/sqlFormat");
 
 const insertar = express.Router();
 
 insertar.post("/", async (req, res, next) => {
-    const { nombre, apellido_pat, apellido_mat, telefono, email, direccion } = req.body;
+    const { nombre, apellido_pat, apellido_mat, telefono, email, direccion } = sqlFormat(req.body);
 
     if (nombre && apellido_pat && apellido_mat && telefono && email && direccion) {
         const sql = `INSERT INTO empleados (nombre, apellido_pat, apellido_mat, telefono,

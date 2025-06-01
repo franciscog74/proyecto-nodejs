@@ -15,13 +15,7 @@ function init() {
 }
 
 function consultar() {
-    const busqueda = document.getElementById("input-buscar").value;
-    
-    axios.get(url + `consultar?busqueda=${busqueda}`, {
-        headers: {
-            Authorization: "bearer " + localStorage.getItem("token")
-        }
-    }).then(res => {
+    buscar(res => {
         console.log(res);
         if (res.data.code !== 500) {
             document.getElementById("btn-back").removeEventListener("click", back);
@@ -32,8 +26,6 @@ function consultar() {
             `;
             document.getElementById("btn-back").addEventListener("click", location.reload.bind(window.location));
         }
-    }).catch(err => {
-        console.log(err);
     });
 }
 

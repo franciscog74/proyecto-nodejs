@@ -3,6 +3,7 @@ const path = require("path");
 
 const db = require("../config/database");
 const auth = require("../middleware/auth");
+const sqlFormat = require("../helpers/sqlFormat");
 
 const consultar = express.Router();
 
@@ -18,7 +19,7 @@ consultar.get("/", (req, res, next) => {
 consultar.use(auth);
 
 consultar.get("/", async (req, res, next) => {
-    const { busqueda } = req.query;
+    const { busqueda } = sqlFormat(req.query);
 
     if (busqueda) {
         const sql = `SELECT * FROM empleados

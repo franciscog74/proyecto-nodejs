@@ -7,7 +7,7 @@ var id = -1;
 function init() {
     if (localStorage.getItem("token")) {
         container = document.querySelector(".container");
-        document.getElementById("btn-borrar").addEventListener("click", buscar);
+        document.getElementById("btn-borrar").addEventListener("click", consultar);
         document.getElementById("btn-back").addEventListener("click", back);
     }
     else {
@@ -15,14 +15,8 @@ function init() {
     }
 }
 
-function buscar() {
-    const busqueda = document.getElementById("input-buscar").value;
-    
-    axios.get(url + `consultar?busqueda=${busqueda}`, {
-        headers: {
-            Authorization: "bearer " + localStorage.getItem("token")
-        }
-    }).then(res => {
+function consultar() {
+    buscar(res => {
         console.log(res);
         if (res.data.code === 200 && Object.keys(res.data.message).length === 1) {
             const row = res.data.message[0];
@@ -40,8 +34,6 @@ function buscar() {
                 ? res.data.message :
                 "Ingresa un registro único");
         }
-    }).catch(err => {
-        console.log(err);
     });
 }
 

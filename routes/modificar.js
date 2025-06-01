@@ -3,6 +3,7 @@ const path = require("path");
 
 const db = require("../config/database");
 const auth = require("../middleware/auth");
+const sqlFormat = require("../helpers/sqlFormat");
 
 const modificar = express.Router();
 
@@ -13,7 +14,7 @@ modificar.get("/", (req, res, next) => {
 modificar.use(auth);
 
 modificar.put("/", async (req, res, next) => {
-    const { id, nombre, apellido_pat, apellido_mat, telefono, email, direccion } = req.body;
+    const { id, nombre, apellido_pat, apellido_mat, telefono, email, direccion } = sqlFormat(req.body);
 
     if (nombre && apellido_pat && apellido_mat && telefono && email && direccion) {
         const sql = `UPDATE empleados SET nombre = '${nombre}', apellido_pat = '${apellido_pat}',
